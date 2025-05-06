@@ -1,0 +1,50 @@
+/*
+// Copyright (c) 2025 Nicket, https://github.com/NicketDev
+// Licensed under the MIT License. See LICENSE file in the project root for details.
+*/
+
+br.cat-lb {
+	display: none;
+}
+
+#categories {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin-bottom: 16px;
+
+	.maintitle {
+		cursor: move;
+	}
+
+	.category {
+		position: relative;
+		transition: opacity 0.5s, scale 0.5s;
+	}
+
+	.category.target-above:before,
+	.category.target-below:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		background: RGBA(255, 255, 255, .25);
+		border: 3px dashed RGBA(255, 255, 255, .75);
+		height: 15px;
+		opacity: 0.75;
+	}
+
+	.category.target-above:before {
+		top: -30px;
+	}
+
+	.category.target-below:after {
+		bottom: -30px;
+	}
+
+	.category.dragging,
+	.category.target {
+		opacity: 0.75;
+		scale: 0.95;
+	}
+}
